@@ -1,0 +1,45 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="css/estilosMaster.css" rel="stylesheet" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+ <table border="1" id="principal">
+                <tr>
+                    <td id="encabezado" colspan="2">Emcabezado</td>
+                </tr>
+                <tr>
+                    <td id="menu">Menu Sitrio <br />
+                        <a href="crearGastoMaster.aspx">Crear</a>
+                        <br />
+                        <a href="#">Modifcar</a>
+                        <br />
+                        <a href="#">Eliminar</a>
+                        <br />
+                        <a href="#">Listar</a>
+                        <br />
+                    </td>
+                    <td id="contenido">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td id="pie" colspan="2">Pie Información de Contacto</td>
+                </tr>
+
+            </table>
+    </div>
+    </form>
+</body>
+</html>

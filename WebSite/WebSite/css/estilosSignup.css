@@ -1,0 +1,89 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: #E0E4E7;
+}
+
+.box {
+    width: 600px;
+    height: auto;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #D1E0DE;
+    text-align: center;
+    border: solid;
+    border-radius: 24px;
+}
+
+    .box h1 {
+        color: black;
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+
+#txtName, #txtLastName, #txtNewUser, #txtNewPassword, #txtNewPassword2 {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #20B2AA;
+    padding: 14px 10px;
+    width: 200px;
+    outline: none;
+    color: black;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+
+    #txtName:focus, #txtLastName:focus, #txtNewUser:focus, #txtNewPassword:focus, #txtNewPassword2:focus {
+        width: 280px;
+        border-color: #404040;
+    }
+
+#btnRegister {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #404040;
+    padding: 14px 40px;
+    outline: none;
+    color: black;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+    #btnRegister:hover {
+        color: white;
+        background: #404040;
+    }
+
+#btnVolver {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #404040;
+    padding: 14px 40px;
+    outline: none;
+    color: black;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+    position: absolute;
+    left: 5%;
+    bottom: 0%;
+}
+
+    #btnVolver:hover {
+        color: white;
+        background: #404040;
+    }

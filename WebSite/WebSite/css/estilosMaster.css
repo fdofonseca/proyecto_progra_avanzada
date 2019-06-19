@@ -1,0 +1,49 @@
+﻿#principal {
+    width: 95%;
+    margin: auto;
+}
+
+.centrar {
+    margin: auto;
+}
+
+#encabezado {
+    background-color: red;
+    height: 200px;
+}
+
+#menu {
+    background-color: aqua;
+    height: 500px;
+    vertical-align: top;
+    text-align: center;
+}
+
+#contenido {
+    background-color: blueviolet;
+    height: 500px;
+    text-align: center;
+    vertical-align: top;
+}
+
+#pie {
+    height: 100px;
+    background-color: darkgreen;
+    text-transform: capitalize;
+}
+
+.textbox {
+    color: brown;
+    background-color: yellow;
+}
+
+.boton {
+    border-radius: 10px;
+    background-color: greenyellow;
+    color: white;
+}
+
+.error {
+    background-color: red;
+    color: black;
+}
