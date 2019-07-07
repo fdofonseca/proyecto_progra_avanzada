@@ -1,0 +1,12 @@
+D:\Documentos\Github\proyecto_progra_avanzada\WebSite\EntityModeloBD\bin\Debug\EntityModeloBD.dll.config
+D:\Documentos\Github\proyecto_progra_avanzada\WebSite\EntityModeloBD\bin\Debug\EntityModeloBD.dll
+D:\Documentos\Github\proyecto_progra_avanzada\WebSite\EntityModeloBD\bin\Debug\EntityModeloBD.pdb
+D:\Documentos\Github\proyecto_progra_avanzada\WebSite\EntityModeloBD\bin\Debug\EntityFramework.dll
+D:\Documentos\Github\proyecto_progra_avanzada\WebSite\EntityModeloBD\bin\Debug\EntityFramework.SqlServer.dll
+D:\Documentos\Github\proyecto_progra_avanzada\WebSite\EntityModeloBD\bin\Debug\EntityFramework.xml
+D:\Documentos\Github\proyecto_progra_avanzada\WebSite\EntityModeloBD\bin\Debug\EntityFramework.SqlServer.xml
+D:\Documentos\Github\proyecto_progra_avanzada\WebSite\EntityModeloBD\obj\Debug\EntityModeloBD.csprojAssemblyReference.cache
+D:\Documentos\Github\proyecto_progra_avanzada\WebSite\EntityModeloBD\obj\Debug\EntityModeloBD.csproj.CoreCompileInputs.cache
+D:\Documentos\Github\proyecto_progra_avanzada\WebSite\EntityModeloBD\obj\Debug\EntityModeloBD.csproj.CopyComplete
+D:\Documentos\Github\proyecto_progra_avanzada\WebSite\EntityModeloBD\obj\Debug\EntityModeloBD.dll
+D:\Documentos\Github\proyecto_progra_avanzada\WebSite\EntityModeloBD\obj\Debug\EntityModeloBD.pdb

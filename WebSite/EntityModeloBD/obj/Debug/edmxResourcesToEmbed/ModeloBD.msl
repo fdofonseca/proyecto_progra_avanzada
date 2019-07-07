@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModeloBDWallfinStoreContainer" CdmEntityContainer="ModeloBD">
+    <EntitySetMapping Name="ahorro">
+      <EntityTypeMapping TypeName="ModeloBDWallfin.ahorro">
+        <MappingFragment StoreEntitySet="ahorro">
+          <ScalarProperty Name="id_ahorro" ColumnName="id_ahorro" />
+          <ScalarProperty Name="tipo_ahorro" ColumnName="tipo_ahorro" />
+          <ScalarProperty Name="valor_ahorro" ColumnName="valor_ahorro" />
+          <ScalarProperty Name="valor_limite_ahorro" ColumnName="valor_limite_ahorro" />
+          <ScalarProperty Name="fecha_ahorro" ColumnName="fecha_ahorro" />
+          <ScalarProperty Name="fk_rut_usuario" ColumnName="fk_rut_usuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gasto">
+      <EntityTypeMapping TypeName="ModeloBDWallfin.gasto">
+        <MappingFragment StoreEntitySet="gasto">
+          <ScalarProperty Name="id_gasto" ColumnName="id_gasto" />
+          <ScalarProperty Name="nombre_gasto" ColumnName="nombre_gasto" />
+          <ScalarProperty Name="tipo_gasto" ColumnName="tipo_gasto" />
+          <ScalarProperty Name="tipo_pago_gasto" ColumnName="tipo_pago_gasto" />
+          <ScalarProperty Name="pago_cuotas" ColumnName="pago_cuotas" />
+          <ScalarProperty Name="valor_gasto" ColumnName="valor_gasto" />
+          <ScalarProperty Name="fecha_gasto" ColumnName="fecha_gasto" />
+          <ScalarProperty Name="fk_rut_usuario" ColumnName="fk_rut_usuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="remuneracion">
+      <EntityTypeMapping TypeName="ModeloBDWallfin.remuneracion">
+        <MappingFragment StoreEntitySet="remuneracion">
+          <ScalarProperty Name="id_remuneracion" ColumnName="id_remuneracion" />
+          <ScalarProperty Name="valor_remuneracion" ColumnName="valor_remuneracion" />
+          <ScalarProperty Name="fecha_remuneracion" ColumnName="fecha_remuneracion" />
+          <ScalarProperty Name="nombre_remuneracion" ColumnName="nombre_remuneracion" />
+          <ScalarProperty Name="cargo_remuneracion" ColumnName="cargo_remuneracion" />
+          <ScalarProperty Name="fk_rut_usuario" ColumnName="fk_rut_usuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tarjeta">
+      <EntityTypeMapping TypeName="ModeloBDWallfin.tarjeta">
+        <MappingFragment StoreEntitySet="tarjeta">
+          <ScalarProperty Name="id_tarjeta" ColumnName="id_tarjeta" />
+          <ScalarProperty Name="nombre_tarjeta" ColumnName="nombre_tarjeta" />
+          <ScalarProperty Name="tipo_tarjeta" ColumnName="tipo_tarjeta" />
+          <ScalarProperty Name="fecha_tarjeta" ColumnName="fecha_tarjeta" />
+          <ScalarProperty Name="fk_rut_usuario" ColumnName="fk_rut_usuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usuario">
+      <EntityTypeMapping TypeName="ModeloBDWallfin.usuario">
+        <MappingFragment StoreEntitySet="usuario">
+          <ScalarProperty Name="rut_usuario" ColumnName="rut_usuario" />
+          <ScalarProperty Name="password_usuario" ColumnName="password_usuario" />
+          <ScalarProperty Name="nombre_usuario" ColumnName="nombre_usuario" />
+          <ScalarProperty Name="apellido_usuario" ColumnName="apellido_usuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

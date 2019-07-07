@@ -1,0 +1,359 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ModeloBDWallfin.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ahorro">
+          <Key>
+            <PropertyRef Name="id_ahorro" />
+          </Key>
+          <Property Name="id_ahorro" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tipo_ahorro" Type="varchar(max)" />
+          <Property Name="valor_ahorro" Type="int" />
+          <Property Name="valor_limite_ahorro" Type="int" />
+          <Property Name="fecha_ahorro" Type="date" />
+          <Property Name="fk_rut_usuario" Type="varchar" MaxLength="25" Nullable="false" />
+        </EntityType>
+        <EntityType Name="gasto">
+          <Key>
+            <PropertyRef Name="id_gasto" />
+          </Key>
+          <Property Name="id_gasto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre_gasto" Type="varchar(max)" />
+          <Property Name="tipo_gasto" Type="varchar(max)" />
+          <Property Name="tipo_pago_gasto" Type="varchar(max)" />
+          <Property Name="pago_cuotas" Type="int" />
+          <Property Name="valor_gasto" Type="int" />
+          <Property Name="fecha_gasto" Type="date" />
+          <Property Name="fk_rut_usuario" Type="varchar" MaxLength="25" Nullable="false" />
+        </EntityType>
+        <EntityType Name="remuneracion">
+          <Key>
+            <PropertyRef Name="id_remuneracion" />
+          </Key>
+          <Property Name="id_remuneracion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="valor_remuneracion" Type="int" />
+          <Property Name="fecha_remuneracion" Type="date" />
+          <Property Name="nombre_remuneracion" Type="varchar(max)" />
+          <Property Name="cargo_remuneracion" Type="varchar(max)" />
+          <Property Name="fk_rut_usuario" Type="varchar" MaxLength="25" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tarjeta">
+          <Key>
+            <PropertyRef Name="id_tarjeta" />
+          </Key>
+          <Property Name="id_tarjeta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre_tarjeta" Type="varchar(max)" />
+          <Property Name="tipo_tarjeta" Type="varchar(max)" />
+          <Property Name="fecha_tarjeta" Type="date" />
+          <Property Name="fk_rut_usuario" Type="varchar" MaxLength="25" Nullable="false" />
+        </EntityType>
+        <EntityType Name="usuario">
+          <Key>
+            <PropertyRef Name="rut_usuario" />
+          </Key>
+          <Property Name="rut_usuario" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="password_usuario" Type="varchar(max)" />
+          <Property Name="nombre_usuario" Type="varchar(max)" />
+          <Property Name="apellido_usuario" Type="varchar(max)" />
+        </EntityType>
+        <Association Name="FK__ahorro__fk_rut_u__29572725">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+          <End Role="ahorro" Type="Self.ahorro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="rut_usuario" />
+            </Principal>
+            <Dependent Role="ahorro">
+              <PropertyRef Name="fk_rut_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__gasto__fk_rut_us__286302EC">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+          <End Role="gasto" Type="Self.gasto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="rut_usuario" />
+            </Principal>
+            <Dependent Role="gasto">
+              <PropertyRef Name="fk_rut_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__remunerac__fk_ru__276EDEB3">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+          <End Role="remuneracion" Type="Self.remuneracion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="rut_usuario" />
+            </Principal>
+            <Dependent Role="remuneracion">
+              <PropertyRef Name="fk_rut_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tarjeta__fk_rut___2A4B4B5E">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+          <End Role="tarjeta" Type="Self.tarjeta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="rut_usuario" />
+            </Principal>
+            <Dependent Role="tarjeta">
+              <PropertyRef Name="fk_rut_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ModeloBDWallfinStoreContainer">
+          <EntitySet Name="ahorro" EntityType="Self.ahorro" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gasto" EntityType="Self.gasto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="remuneracion" EntityType="Self.remuneracion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tarjeta" EntityType="Self.tarjeta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="usuario" EntityType="Self.usuario" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__ahorro__fk_rut_u__29572725" Association="Self.FK__ahorro__fk_rut_u__29572725">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="ahorro" EntitySet="ahorro" />
+          </AssociationSet>
+          <AssociationSet Name="FK__gasto__fk_rut_us__286302EC" Association="Self.FK__gasto__fk_rut_us__286302EC">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="gasto" EntitySet="gasto" />
+          </AssociationSet>
+          <AssociationSet Name="FK__remunerac__fk_ru__276EDEB3" Association="Self.FK__remunerac__fk_ru__276EDEB3">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="remuneracion" EntitySet="remuneracion" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tarjeta__fk_rut___2A4B4B5E" Association="Self.FK__tarjeta__fk_rut___2A4B4B5E">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="tarjeta" EntitySet="tarjeta" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ModeloBDWallfin" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ahorro">
+          <Key>
+            <PropertyRef Name="id_ahorro" />
+          </Key>
+          <Property Name="id_ahorro" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tipo_ahorro" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="valor_ahorro" Type="Int32" />
+          <Property Name="valor_limite_ahorro" Type="Int32" />
+          <Property Name="fecha_ahorro" Type="DateTime" Precision="0" />
+          <Property Name="fk_rut_usuario" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="usuario" Relationship="Self.FK__ahorro__fk_rut_u__29572725" FromRole="ahorro" ToRole="usuario" />
+        </EntityType>
+        <EntityType Name="gasto">
+          <Key>
+            <PropertyRef Name="id_gasto" />
+          </Key>
+          <Property Name="id_gasto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre_gasto" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="tipo_gasto" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="tipo_pago_gasto" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="pago_cuotas" Type="Int32" />
+          <Property Name="valor_gasto" Type="Int32" />
+          <Property Name="fecha_gasto" Type="DateTime" Precision="0" />
+          <Property Name="fk_rut_usuario" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="usuario" Relationship="Self.FK__gasto__fk_rut_us__286302EC" FromRole="gasto" ToRole="usuario" />
+        </EntityType>
+        <EntityType Name="remuneracion">
+          <Key>
+            <PropertyRef Name="id_remuneracion" />
+          </Key>
+          <Property Name="id_remuneracion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="valor_remuneracion" Type="Int32" />
+          <Property Name="fecha_remuneracion" Type="DateTime" Precision="0" />
+          <Property Name="nombre_remuneracion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="cargo_remuneracion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="fk_rut_usuario" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="usuario" Relationship="Self.FK__remunerac__fk_ru__276EDEB3" FromRole="remuneracion" ToRole="usuario" />
+        </EntityType>
+        <EntityType Name="tarjeta">
+          <Key>
+            <PropertyRef Name="id_tarjeta" />
+          </Key>
+          <Property Name="id_tarjeta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre_tarjeta" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="tipo_tarjeta" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_tarjeta" Type="DateTime" Precision="0" />
+          <Property Name="fk_rut_usuario" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="usuario" Relationship="Self.FK__tarjeta__fk_rut___2A4B4B5E" FromRole="tarjeta" ToRole="usuario" />
+        </EntityType>
+        <EntityType Name="usuario">
+          <Key>
+            <PropertyRef Name="rut_usuario" />
+          </Key>
+          <Property Name="rut_usuario" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password_usuario" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="nombre_usuario" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="apellido_usuario" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ahorro" Relationship="Self.FK__ahorro__fk_rut_u__29572725" FromRole="usuario" ToRole="ahorro" />
+          <NavigationProperty Name="gasto" Relationship="Self.FK__gasto__fk_rut_us__286302EC" FromRole="usuario" ToRole="gasto" />
+          <NavigationProperty Name="remuneracion" Relationship="Self.FK__remunerac__fk_ru__276EDEB3" FromRole="usuario" ToRole="remuneracion" />
+          <NavigationProperty Name="tarjeta" Relationship="Self.FK__tarjeta__fk_rut___2A4B4B5E" FromRole="usuario" ToRole="tarjeta" />
+        </EntityType>
+        <Association Name="FK__ahorro__fk_rut_u__29572725">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+          <End Role="ahorro" Type="Self.ahorro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="rut_usuario" />
+            </Principal>
+            <Dependent Role="ahorro">
+              <PropertyRef Name="fk_rut_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__gasto__fk_rut_us__286302EC">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+          <End Role="gasto" Type="Self.gasto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="rut_usuario" />
+            </Principal>
+            <Dependent Role="gasto">
+              <PropertyRef Name="fk_rut_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__remunerac__fk_ru__276EDEB3">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+          <End Role="remuneracion" Type="Self.remuneracion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="rut_usuario" />
+            </Principal>
+            <Dependent Role="remuneracion">
+              <PropertyRef Name="fk_rut_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tarjeta__fk_rut___2A4B4B5E">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+          <End Role="tarjeta" Type="Self.tarjeta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="rut_usuario" />
+            </Principal>
+            <Dependent Role="tarjeta">
+              <PropertyRef Name="fk_rut_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ModeloBD" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ahorro" EntityType="Self.ahorro" />
+          <EntitySet Name="gasto" EntityType="Self.gasto" />
+          <EntitySet Name="remuneracion" EntityType="Self.remuneracion" />
+          <EntitySet Name="tarjeta" EntityType="Self.tarjeta" />
+          <EntitySet Name="usuario" EntityType="Self.usuario" />
+          <AssociationSet Name="FK__ahorro__fk_rut_u__29572725" Association="Self.FK__ahorro__fk_rut_u__29572725">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="ahorro" EntitySet="ahorro" />
+          </AssociationSet>
+          <AssociationSet Name="FK__gasto__fk_rut_us__286302EC" Association="Self.FK__gasto__fk_rut_us__286302EC">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="gasto" EntitySet="gasto" />
+          </AssociationSet>
+          <AssociationSet Name="FK__remunerac__fk_ru__276EDEB3" Association="Self.FK__remunerac__fk_ru__276EDEB3">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="remuneracion" EntitySet="remuneracion" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tarjeta__fk_rut___2A4B4B5E" Association="Self.FK__tarjeta__fk_rut___2A4B4B5E">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="tarjeta" EntitySet="tarjeta" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModeloBDWallfinStoreContainer" CdmEntityContainer="ModeloBD">
+          <EntitySetMapping Name="ahorro">
+            <EntityTypeMapping TypeName="ModeloBDWallfin.ahorro">
+              <MappingFragment StoreEntitySet="ahorro">
+                <ScalarProperty Name="id_ahorro" ColumnName="id_ahorro" />
+                <ScalarProperty Name="tipo_ahorro" ColumnName="tipo_ahorro" />
+                <ScalarProperty Name="valor_ahorro" ColumnName="valor_ahorro" />
+                <ScalarProperty Name="valor_limite_ahorro" ColumnName="valor_limite_ahorro" />
+                <ScalarProperty Name="fecha_ahorro" ColumnName="fecha_ahorro" />
+                <ScalarProperty Name="fk_rut_usuario" ColumnName="fk_rut_usuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gasto">
+            <EntityTypeMapping TypeName="ModeloBDWallfin.gasto">
+              <MappingFragment StoreEntitySet="gasto">
+                <ScalarProperty Name="id_gasto" ColumnName="id_gasto" />
+                <ScalarProperty Name="nombre_gasto" ColumnName="nombre_gasto" />
+                <ScalarProperty Name="tipo_gasto" ColumnName="tipo_gasto" />
+                <ScalarProperty Name="tipo_pago_gasto" ColumnName="tipo_pago_gasto" />
+                <ScalarProperty Name="pago_cuotas" ColumnName="pago_cuotas" />
+                <ScalarProperty Name="valor_gasto" ColumnName="valor_gasto" />
+                <ScalarProperty Name="fecha_gasto" ColumnName="fecha_gasto" />
+                <ScalarProperty Name="fk_rut_usuario" ColumnName="fk_rut_usuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="remuneracion">
+            <EntityTypeMapping TypeName="ModeloBDWallfin.remuneracion">
+              <MappingFragment StoreEntitySet="remuneracion">
+                <ScalarProperty Name="id_remuneracion" ColumnName="id_remuneracion" />
+                <ScalarProperty Name="valor_remuneracion" ColumnName="valor_remuneracion" />
+                <ScalarProperty Name="fecha_remuneracion" ColumnName="fecha_remuneracion" />
+                <ScalarProperty Name="nombre_remuneracion" ColumnName="nombre_remuneracion" />
+                <ScalarProperty Name="cargo_remuneracion" ColumnName="cargo_remuneracion" />
+                <ScalarProperty Name="fk_rut_usuario" ColumnName="fk_rut_usuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tarjeta">
+            <EntityTypeMapping TypeName="ModeloBDWallfin.tarjeta">
+              <MappingFragment StoreEntitySet="tarjeta">
+                <ScalarProperty Name="id_tarjeta" ColumnName="id_tarjeta" />
+                <ScalarProperty Name="nombre_tarjeta" ColumnName="nombre_tarjeta" />
+                <ScalarProperty Name="tipo_tarjeta" ColumnName="tipo_tarjeta" />
+                <ScalarProperty Name="fecha_tarjeta" ColumnName="fecha_tarjeta" />
+                <ScalarProperty Name="fk_rut_usuario" ColumnName="fk_rut_usuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usuario">
+            <EntityTypeMapping TypeName="ModeloBDWallfin.usuario">
+              <MappingFragment StoreEntitySet="usuario">
+                <ScalarProperty Name="rut_usuario" ColumnName="rut_usuario" />
+                <ScalarProperty Name="password_usuario" ColumnName="password_usuario" />
+                <ScalarProperty Name="nombre_usuario" ColumnName="nombre_usuario" />
+                <ScalarProperty Name="apellido_usuario" ColumnName="apellido_usuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
