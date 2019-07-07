@@ -23,8 +23,25 @@
         }
     </script>
     <div id="contentHome">
-        <asp:Literal ID="ltRemuneracion" runat="server"></asp:Literal>
-        <div id="piechart" style="width: 900px; height: 500px;"></div>
+        <table>
+            <tr>
+                <td>
+                    <asp:Literal ID="ltRemuneracion" runat="server"></asp:Literal>
+
+                </td>
+                <td>
+                    <asp:Label ID="Label1" runat="server" Text="Historial"></asp:Label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="piechart" style="width: 710px; height: 500px; vertical-align: central"></div>
+                </td>
+                <td>
+                    <asp:GridView ID="gdvHistorial" runat="server"></asp:GridView>
+                </td>
+            </tr>
+        </table>
     </div>
 
 </asp:Content>

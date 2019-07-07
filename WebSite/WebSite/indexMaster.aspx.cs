@@ -31,7 +31,29 @@ public partial class indexMaster : System.Web.UI.Page
 
     protected string obtenerDatosRemuneracion()
     {
-        return "";
+        string rut = rutSession;
+        int valor = 0;
+        ModeloBD bd = new ModeloBD();
+        var remuneraciones = from r in bd.remuneracion
+                     where r.fk_rut_usuario == rut
+                     select r;
+
+        if (remuneraciones != null)
+        {
+            foreach (var remuneracion in remuneraciones)
+            {
+                valor = valor + Convert.ToInt32(remuneracion.valor_remuneracion);
+
+            }
+            ltRemuneracion.Text = valor.ToString();
+            return ltRemuneracion.Text;
+        }
+        else
+        {
+            ltRemuneracion.Text = "Sin Remuneración";
+            return ltRemuneracion.Text;
+        }
+            
     }
 
     protected string obtenerDatosGastos()
@@ -45,6 +67,10 @@ public partial class indexMaster : System.Web.UI.Page
 
         if (gastos != null)
         {
+            gdvHistorial.DataSource = gastos.ToList();
+            gdvHistorial.DataBind();
+
+
             DataTable dt = new DataTable();
 
             dt.Columns.Add(new DataColumn("Categoría", typeof(string)));
