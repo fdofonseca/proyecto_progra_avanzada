@@ -22,7 +22,10 @@
             chart.draw(data, options);
         }
     </script>
+    <div id="contentHome">
+        <asp:Literal ID="ltRemuneracion" runat="server"></asp:Literal>
+        <div id="piechart" style="width: 900px; height: 500px;"></div>
+    </div>
 
-    <div id="piechart" style="width: 900px; height: 500px;"></div>
 </asp:Content>
 

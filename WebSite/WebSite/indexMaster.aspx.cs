@@ -9,20 +9,39 @@ using EntityModeloBD;
 
 public partial class indexMaster : System.Web.UI.Page
 {
+    public string rutSession;
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
         {
+            if (Session["rut_usuario"] != null && !Session["rut_usuario"].Equals(""))
+            {
+                rutSession = Session["rut_usuario"].ToString();
+                //ltMensaje.Text = "Bienvenido " + Session["nombre_usuario"];
+            }
+            else
+            {
+                Response.Redirect("index.aspx");
+            }
+
             obtenerDatosGastos();
+            obtenerDatosRemuneracion();
         }
+    }
+
+    protected string obtenerDatosRemuneracion()
+    {
+        return "";
     }
 
     protected string obtenerDatosGastos()
     {
         string strDatos;
+        string rut = rutSession;
         ModeloBD bd = new ModeloBD();
         var gastos = from g in bd.gasto
-                     select g;
+                      where g.fk_rut_usuario == rut
+                      select g;
 
         if (gastos != null)
         {
