@@ -29,6 +29,8 @@ namespace EntityModeloBD
         public virtual DbSet<gasto> gasto { get; set; }
         public virtual DbSet<remuneracion> remuneracion { get; set; }
         public virtual DbSet<tarjeta> tarjeta { get; set; }
+        public virtual DbSet<tipo_gasto> tipo_gasto { get; set; }
+        public virtual DbSet<tipo_pago> tipo_pago { get; set; }
         public virtual DbSet<usuario> usuario { get; set; }
     }
 }

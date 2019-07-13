@@ -78,6 +78,12 @@
     <Compile Include="tarjeta.cs">
       <DependentUpon>ModeloBD.tt</DependentUpon>
     </Compile>
+    <Compile Include="tipo_gasto.cs">
+      <DependentUpon>ModeloBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tipo_pago.cs">
+      <DependentUpon>ModeloBD.tt</DependentUpon>
+    </Compile>
     <Compile Include="usuario.cs">
       <DependentUpon>ModeloBD.tt</DependentUpon>
     </Compile>

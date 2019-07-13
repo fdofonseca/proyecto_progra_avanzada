@@ -13,7 +13,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: #D1E0DE;
+    background: #3259CA;
     text-align: center;
     border: solid;
     border-radius: 24px;
@@ -35,7 +35,7 @@
     padding: 14px 10px;
     width: 200px;
     outline: none;
-    color: black;
+    color: white;
     border-radius: 24px;
     transition: 0.25s;
 }

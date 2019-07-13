@@ -13,7 +13,8 @@ public partial class signup : System.Web.UI.Page
 
     }
 
-    protected void btnRegister_Click(object sender, EventArgs e)
+
+    protected void btnRegister_Click1(object sender, EventArgs e)
     {
         if (Page.IsValid)
         {
@@ -33,19 +34,14 @@ public partial class signup : System.Web.UI.Page
                 bd.SaveChanges();
 
                 Session["rut_usuario"] = rut;
+                Session["nombre_usuario"] = nombre + " " + apellido; 
                 Response.Redirect("indexMaster.aspx");
             }
             else
             {
-               Response.Write("<script language='javascript'>alert('Las Contraseñas no coinciden! .');</script>");
+                Response.Write("<script language='javascript'>alert('Las Contraseñas no coinciden! .');</script>");
             }
 
         }
     }
-
-    protected void btnVolver_Click(object sender, EventArgs e)
-    {
-        Response.RedirectPermanent("index.aspx");
-    }
-
 }

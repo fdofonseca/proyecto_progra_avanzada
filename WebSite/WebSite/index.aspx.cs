@@ -13,11 +13,13 @@ public partial class index : System.Web.UI.Page
 
     }
 
-
-
-    protected void Button1_Click(object sender, EventArgs e)
+    protected void btnSignup_Click(object sender, EventArgs e)
     {
+        Response.RedirectPermanent("signup.aspx");
+    }
 
+    protected void Button1_Click1(object sender, EventArgs e)
+    {
         if (Page.IsValid)
         {
             ModeloBD bd = new ModeloBD();
@@ -27,6 +29,7 @@ public partial class index : System.Web.UI.Page
             if (datos != null)
             {
                 Session["rut_usuario"] = datos.rut_usuario;
+                Session["nombre_usuario"] = datos.nombre_usuario + " " + datos.apellido_usuario;
                 // Session.Remove["nombre_real"];
                 // Session.Abandon
                 Response.Redirect("indexMaster.aspx");
@@ -40,12 +43,5 @@ public partial class index : System.Web.UI.Page
                 txtPassword.Text = "";
             }
         }
-
-
-    }
-
-    protected void btnSignup_Click(object sender, EventArgs e)
-    {
-        Response.RedirectPermanent("signup.aspx");
     }
 }

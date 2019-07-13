@@ -19,6 +19,8 @@ namespace EntityModeloBD
         public Nullable<System.DateTime> fecha_remuneracion { get; set; }
         public string nombre_remuneracion { get; set; }
         public string cargo_remuneracion { get; set; }
+
+
         public string fk_rut_usuario { get; set; }
     
         public virtual usuario usuario { get; set; }

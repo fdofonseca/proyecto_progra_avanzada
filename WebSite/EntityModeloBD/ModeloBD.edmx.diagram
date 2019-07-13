@@ -5,15 +5,17 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="35efef7146384ec8a6a42fa5d7d43dbc" Name="Diagram1">
-        <EntityTypeShape EntityType="ModeloBDWallfin.ahorro" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="ModeloBDWallfin.gasto" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ModeloBDWallfin.remuneracion" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
-        <EntityTypeShape EntityType="ModeloBDWallfin.tarjeta" Width="1.5" PointX="3" PointY="11.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="ModeloBDWallfin.usuario" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
-        <AssociationConnector Association="ModeloBDWallfin.FK__ahorro__fk_rut_u__29572725" ManuallyRouted="false" />
-        <AssociationConnector Association="ModeloBDWallfin.FK__gasto__fk_rut_us__286302EC" ManuallyRouted="false" />
-        <AssociationConnector Association="ModeloBDWallfin.FK__remunerac__fk_ru__276EDEB3" ManuallyRouted="false" />
-        <AssociationConnector Association="ModeloBDWallfin.FK__tarjeta__fk_rut___2A4B4B5E" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ModeloBDWallfin.ahorro" Width="1.5" PointX="3" PointY="1.375" />
+        <EntityTypeShape EntityType="ModeloBDWallfin.gasto" Width="1.5" PointX="3" PointY="7.625" />
+        <EntityTypeShape EntityType="ModeloBDWallfin.remuneracion" Width="1.5" PointX="3" PointY="4.5" />
+        <EntityTypeShape EntityType="ModeloBDWallfin.tarjeta" Width="1.5" PointX="3" PointY="11.125" />
+        <EntityTypeShape EntityType="ModeloBDWallfin.tipo_gasto" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ModeloBDWallfin.tipo_pago" Width="1.5" PointX="5.75" PointY="3.75" />
+        <EntityTypeShape EntityType="ModeloBDWallfin.usuario" Width="1.5" PointX="0.75" PointY="6.125" />
+        <AssociationConnector Association="ModeloBDWallfin.FK__ahorro__fk_rut_u__29572725" />
+        <AssociationConnector Association="ModeloBDWallfin.FK__gasto__fk_rut_us__5441852A" />
+        <AssociationConnector Association="ModeloBDWallfin.FK__remunerac__fk_ru__276EDEB3" />
+        <AssociationConnector Association="ModeloBDWallfin.FK__tarjeta__fk_rut___2A4B4B5E" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
